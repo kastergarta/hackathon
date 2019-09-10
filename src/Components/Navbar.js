@@ -4,33 +4,26 @@ class NavBar extends React.Component {
 
   render(){
 
-  if (this.props.loginClicked === false) {
     return (
       <div className="navbar">
-        <div className="logo"> </div>
+        <div className="logo">
+
+        </div>
         <div className="buttons">
           <button
             className="register-button"
             onClick={this.props.handleLoginClick}>
-            REGISTER
+            LOGIN
+          </button>
+          <button
+            className="signup-button"
+            onClick={this.props.handleSignUpClick}
+          >
+            SIGNUP
           </button>
         </div>
       </div>
-    );
-  } else {
-    return (
-      <div className="navbar">
-        <div className="logo"> </div>
-        <div className="buttons">
-          <button className="profile-button">
-            VIEW YOUR PROFILE
-          </button>
-        </div>
-      </div>
-    );
-  }
-
-
+    )
  }
 }
 

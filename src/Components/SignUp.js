@@ -3,8 +3,9 @@ import Checkbox from './Checkbox.js';
 
 const OPTIONS = ["JS", "Python", "GraphQL", "Rust", "React", "Angular", "R"];
 
-class LoginForm extends React.Component {
+class SignUp extends React.Component {
 
+// ###################################
   state = {
 
     checkboxes: OPTIONS.reduce(
@@ -18,6 +19,7 @@ class LoginForm extends React.Component {
     email: '',
     password: ''
   };
+// ###################################
 
   selectAllCheckboxes = isSelected => {
     Object.keys(this.state.checkboxes).forEach(checkbox => {
@@ -34,6 +36,7 @@ class LoginForm extends React.Component {
   selectAll = () => this.selectAllCheckboxes(true);
 
   deselectAll = () => this.selectAllCheckboxes(false);
+// ###################################
 
   handleCheckboxChange = changeEvent => {
     const { name } = changeEvent.target;
@@ -45,20 +48,34 @@ class LoginForm extends React.Component {
       }
     }));
   };
-
+  // ###################################
   handleFormSubmit = formSubmitEvent => {
     formSubmitEvent.preventDefault();
 
-    Object.keys(this.state.checkboxes)
-      .filter(checkbox => this.state.checkboxes[checkbox])
-      .forEach(checkbox => {
-        console.log(checkbox, "is selected.");
-      });
+    // Object.keys(this.state.checkboxes)
+    //   .filter(checkbox => this.state.checkboxes[checkbox])
+    //   .forEach(checkbox => {
+    //     console.log(checkbox, "is selected.");
+    //   });
 
-    this.props.handleSubmit();
+    // fetch('http://localhost:3000/submit', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Accept': 'application/json',
+    //     'Content-Type': 'application/json'
+    //   },
+    //   body: JSON.stringify(this.state)
+    // })
+    // .then(res => res.json())
+    // .then(data => {
+    //   if (data.token) {
+    //     localStorage.token = data.token
+    //     this.props.handleSubmit()
+    //   }
+    // })
 
   };
-
+// ###################################
   createCheckbox = option => (
     <Checkbox
       label={option}
@@ -69,7 +86,7 @@ class LoginForm extends React.Component {
   );
 
   createCheckboxes = () => OPTIONS.map(this.createCheckbox);
-
+// ###################################
   render() {
     return (
       <div className="container">
@@ -135,4 +152,4 @@ class LoginForm extends React.Component {
 
 }
 
-export default LoginForm;
+export default SignUp;
