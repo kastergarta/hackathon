@@ -1,33 +1,60 @@
-.App {
-  text-align: center;
+.navbar {
+  background-color: grey;
+  height: 100px;
+  color: white
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.maininfo {
+  background-color: lightgrey;
+  height: 650px;
+  color: white
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.points {
+  background-color: grey;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: row;
+  flex-wrap: wrap;
+  color: white
 }
 
-.App-link {
-  color: #61dafb;
+.sponsors {
+  background-color: lightgrey;
+  height: 100px;
+  color: white
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.judges {
+  background-color: grey;
+  height: 100px;
+  color: white
+}
+
+.faq {
+  background-color: lightgrey;
+  height: 100px;
+  color: white
+}
+
+.footer {
+  background-color: grey;
+  height: 100px;
+  color: white
+}
+
+.loginform {
+  background-color: black;
+  height: 100px;
+  color: white
+}
+
+.profile {
+  background-color: black;
+  height: 100px;
+  color: white
+}
+
+.flex-points {
+  height: 200px;
+  width: 33.3%
 }
