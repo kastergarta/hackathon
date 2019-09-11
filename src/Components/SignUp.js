@@ -1,97 +1,42 @@
 import React from 'react';
-import Checkbox from './Checkbox.js';
-
-const OPTIONS = ["JS", "Python", "GraphQL", "Rust", "React", "Angular", "R"];
 
 class SignUp extends React.Component {
 
 // ###################################
   state = {
-
-    checkboxes: OPTIONS.reduce(
-      (options, option) => ({
-        ...options,
-        [option]: false
-      }),
-      {}
-    ),
-    username: '',
+    name: '',
     email: '',
     password: ''
   };
 // ###################################
 
-  selectAllCheckboxes = isSelected => {
-    Object.keys(this.state.checkboxes).forEach(checkbox => {
+ handleChange = (e) => {
+   this.setState({
+     [e.target.name]: e.target.value
+   });
+ }
 
-      this.setState(prevState => ({
-        checkboxes: {
-          ...prevState.checkboxes,
-          [checkbox]: isSelected
-        }
-      }));
-    });
-  };
 
-  selectAll = () => this.selectAllCheckboxes(true);
-
-  deselectAll = () => this.selectAllCheckboxes(false);
-// ###################################
-
-  handleCheckboxChange = changeEvent => {
-    const { name } = changeEvent.target;
-
-    this.setState(prevState => ({
-      checkboxes: {
-        ...prevState.checkboxes,
-        [name]: !prevState.checkboxes[name]
-      }
-    }));
-  };
   // ###################################
   handleFormSubmit = formSubmitEvent => {
     formSubmitEvent.preventDefault();
 
-    // Object.keys(this.state.checkboxes)
-    //   .filter(checkbox => this.state.checkboxes[checkbox])
-    //   .forEach(checkbox => {
-    //     console.log(checkbox, "is selected.");
-    //   });
-
-    // fetch('http://localhost:3000/submit', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Accept': 'application/json',
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify(this.state)
-    // })
-    // .then(res => res.json())
-    // .then(data => {
-    //   if (data.token) {
-    //     localStorage.token = data.token
-    //     this.props.handleSubmit()
-    //   }
-    // })
+    fetch('http://localhost:3000/api/v1/signup', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(this.state)
+    })
+    .then(res => res.json())
+    .then(console.log)
 
   };
-// ###################################
-  createCheckbox = option => (
-    <Checkbox
-      label={option}
-      isSelected={this.state.checkboxes[option]}
-      onCheckboxChange={this.handleCheckboxChange}
-      key={option}
-    />
-  );
 
-  createCheckboxes = () => OPTIONS.map(this.createCheckbox);
-// ###################################
   render() {
     return (
-      <div className="container">
-        <div className="row mt-5">
-          <div className="col-sm-12">
+
             <form onSubmit={this.handleFormSubmit}>
 
               <div>
@@ -99,7 +44,7 @@ class SignUp extends React.Component {
                   type="text"
                   name="name"
                   placeholder="Name"
-                  value={this.state.username}
+                  value={this.state.name}
                   onChange={this.handleChange}
                 />
 
@@ -119,34 +64,14 @@ class SignUp extends React.Component {
                     onChange={this.handleChange}
                   />
 
-              </div>
 
-              {this.createCheckboxes()}
 
-              <div className="form-group mt-2">
-                <button
-                  type="button"
-                  className="btn btn-outline-primary mr-2"
-                  onClick={this.selectAll}
-                >
-                  Select All
-                </button>
 
-                <button
-                  type="button"
-                  className="btn btn-outline-primary mr-2"
-                  onClick={this.deselectAll}
-                >
-                  Deselect All
-                </button>
                 <button type="submit" className="btn btn-primary">
                   Submit
                 </button>
               </div>
             </form>
-          </div>
-        </div>
-      </div>
     );
   }
 

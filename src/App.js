@@ -33,13 +33,23 @@ class App extends React.Component {
  })
  }
 
+ handleLogOutClick = () => {
+   localStorage.clear();
+ }
+
+ handleProfileClick = () => {
+ this.setState ({
+   page: 'profile'
+ })
+ }
+
   render(){
 
     switch (this.state.page) {
          case 'login':
            return (
              <div className="App">
-               <NavBar handleLoginClick={this.handleLoginClick} handleSignUpClick={this.handleSignUpClick}/>
+               <NavBar handleLoginClick={this.handleLoginClick} handleSignUpClick={this.handleSignUpClick} handleLogOutClick={this.handleLogOutClick} handleProfileClick={this.handleProfileClick}/>
                <LogIn />
                <MainInfo />
                <Points />
@@ -52,8 +62,21 @@ class App extends React.Component {
          case 'signup':
          return (
            <div className="App">
-             <NavBar handleLoginClick={this.handleLoginClick} handleSignUpClick={this.handleSignUpClick}/>
+             <NavBar handleLoginClick={this.handleLoginClick} handleSignUpClick={this.handleSignUpClick} handleLogOutClick={this.handleLogOutClick} handleProfileClick={this.handleProfileClick}/>
              <SignUp />
+             <MainInfo />
+             <Points />
+             <Sponsors />
+             <Judges />
+             <FAQ />
+             <Footer />
+           </div>
+         );
+         case 'profile':
+         return (
+           <div className="App">
+             <NavBar handleLoginClick={this.handleLoginClick} handleSignUpClick={this.handleSignUpClick} handleLogOutClick={this.handleLogOutClick} handleProfileClick={this.handleProfileClick}/>
+             <Profile />
              <MainInfo />
              <Points />
              <Sponsors />
@@ -65,7 +88,7 @@ class App extends React.Component {
          default:
          return (
            <div className="App">
-             <NavBar handleLoginClick={this.handleLoginClick} handleSignUpClick={this.handleSignUpClick}/>
+             <NavBar handleLoginClick={this.handleLoginClick} handleSignUpClick={this.handleSignUpClick} handleLogOutClick={this.handleLogOutClick} handleProfileClick={this.handleProfileClick}/>
              <MainInfo />
              <Points />
              <Sponsors />

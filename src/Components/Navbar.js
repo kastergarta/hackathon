@@ -21,6 +21,18 @@ class NavBar extends React.Component {
           >
             SIGNUP
           </button>
+          <button
+            className="logout-button"
+            onClick={this.props.handleLogOutClick}
+          >
+            LOGOUT
+          </button>
+          <button
+            className="logout-button"
+            onClick={this.props.handleProfileClick}
+          >
+            PROFILE
+          </button>
         </div>
       </div>
     )
