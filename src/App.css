@@ -1,6 +1,6 @@
 .navbar {
-  background-color: grey;
-  height: 100px;
+  background-color: rgb(209, 153, 255);
+  height: 120px;
   color: white
 }
 
@@ -60,7 +60,7 @@
 }
 
 .logo {
-  background-color: blue;
-  height: 100px;
-  width: 100px
+  height: 120px;
+  width: 120px;
+  
 }
