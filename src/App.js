@@ -11,6 +11,7 @@ import SignUp from './Components/SignUp.js'
 import LogIn from './Components/LogIn.js'
 import Profile from './Components/Profile.js'
 import 'bootstrap/dist/css/bootstrap.css';
+import { Switch, Route } from 'react-router-dom'
 
 
 
