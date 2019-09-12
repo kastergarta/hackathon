@@ -1,43 +1,53 @@
 .navbar {
-  background-color: grey;
-  height: 100px;
-  color: white
+  background-color: rgb(209, 153, 255);
+  height: 130px;
+  color: white;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, .5)
 }
 
 .maininfo {
-  background-color: lightgrey;
+  background-color: rgb(255, 255, 255);
   height: 650px;
-  color: white
+  color: rgb(158, 158, 158)
 }
 
 .points {
-  background-color: grey;
+  background-color: rgb(209, 153, 255);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  color: white
+  color: white;
+  height: 650px;
+  
 }
 
 .sponsors {
-  background-color: lightgrey;
-  height: 100px;
-  color: white
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 150px;
+  color: rgb(143, 143, 143)
 }
 
 .judges {
-  background-color: grey;
-  height: 100px;
-  color: white
+  background-color: rgb(209, 153, 255);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 250px;
+  color: white;
+  
 }
 
 .faq {
-  background-color: lightgrey;
+  background-color: rgb(255, 255, 255);
   height: 100px;
-  color: white
+  color: rgb(133, 133, 133)
 }
 
 .footer {
-  background-color: grey;
+  background-color: rgb(209, 153, 255);
   height: 100px;
   color: white
 }
@@ -55,12 +65,81 @@
 }
 
 .flex-points {
-  height: 200px;
-  width: 33.3%
+  height: 180px;
+  width: 33.3%;
+  margin-top: 2em;
 }
 
 .logo {
-  background-color: blue;
-  height: 100px;
-  width: 100px
+  height: 120px;
+  width: 120px;
+  
 }
+
+.pointsIcons {
+  height: 200px;
+  width:auto;
+}
+
+.pointsText {
+  padding-left: 20px;
+  font-size: 25px;
+  font-family: 'Catamaran', sans-serif;
+}
+
+.sponsorsImage {
+  height: 140px;
+  width:auto;
+  margin-left: 50px;
+  
+}
+
+#google {
+  height: 20%;
+  width: auto;
+  margin-top: 43px;
+  margin-left: 50px;
+}
+
+#spotify {
+  margin-top: 10px;
+  margin-left: -550px;
+}
+
+#etsy {
+  margin-top: 10px;
+  margin-left: -250px;
+}
+
+#mongo {
+  height: 30%;
+  
+  margin-top: 10px;
+  
+}
+
+#ibm {
+  height: 30%;
+  
+  margin-top: 10px;
+  position: relative;
+  top: -350px;
+  left: 1100px;
+
+}
+
+.judge {
+  height: 180px;
+  width: 33.3%;
+  margin-top: 2em;
+  
+}
+
+.judgeImage {
+  border-radius: 50%;
+  height: 180px;
+  width: 33.3%;
+  
+}
+
+
