@@ -35,15 +35,21 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  height: 250px;
+  height: 300px;
   color: white;
   
 }
 
 .faq {
   background-color: rgb(255, 255, 255);
-  height: 100px;
-  color: rgb(133, 133, 133)
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 900px;
+  color: rgb(133, 133, 133);
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-right: 20px;
 }
 
 .footer {
@@ -133,13 +139,29 @@
   width: 33.3%;
   margin-top: 2em;
   
-}
+} 
 
 .judgeImage {
-  border-radius: 50%;
-  height: 180px;
-  width: 33.3%;
-  
-}
+  height: 200px;
+  width: auto;
+  }
+
+  .judgeText {
+    font-size: 30px;
+    font-family: 'Catamaran', sans-serif;
+    margin-left: 40px;
+  }
+
+  .judgeDiv {
+    background-color: rgb(209, 153, 255);
+    font-family: 'Catamaran', sans-serif;
+    color: white;
+    
+  }
+
+  .judgeDiv > h1 {
+    margin-left: 20px;
+    margin-top: 15px;
+  }
 
 
